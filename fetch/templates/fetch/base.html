@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+
+<head>
+
+<style>
+
+
+
+input[type=button].spring {
+  background: #ffd6c9;
+  border: 2px solid #e21818;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=button].spring:hover {
+  animation: none;
+}
+
+@keyframes spring {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  10% {
+    transform: scale(1.2, 0.6);
+  }
+  30% {
+    transform: scale(0.8, 1.1) translateY(-30px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.spring {
+  animation: spring 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+
+img {
+  border-radius: 20%;
+
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<title>Django RSS Reader</title>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="icon" type="image/png"  href="https://img.favpng.com/17/24/21/rss-web-feed-logo-news-aggregator-blog-png-favpng-XJNrnUgdtqSzejkgwLpvx2Z1Y.jpg">
+</head>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+<ul class="navbar-nav">
+
+
+<li class="nav-link"><h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Click on the Image to check out respective channel News feed</h5>
+</ul>
+
+</nav>
+
+<body  background="http://www.pptbackgrounds.net/uploads/the-starry-sky-backgrounds-wallpapers.jpg">
+  {% load static %}
+
+
+
+<br><br>
+  <div class="spring">
+
+  <a href="/hindu"><img src="{% static 'fetch/hindu.jpg' %}" style="margin:0px 30px" width="145" height="150"></a>
+  <a href="/ndtv"><img src="{% static 'fetch/ndtv.jpg' %}" style="margin:10px 30px" width="145" height="150" ></a>
+  <a href="/toi"><img src="{% static 'fetch/toi.jpeg' %}" style="margin:20px 30px"  width="145" height="150"></a>
+  <a href="/zee"><img src="{% static 'fetch/zee.jpg' %}" style="margin:0px 30px"  width="145" height="150"></a>
+  <a href="/news18"><img src="{% static 'fetch/news18.jpg' %}" style="margin:0px 30px"  width="145" height="150"></a>
+  <a href="/indiatoday"><img src="{% static 'fetch/indiatoday.jpeg' %}" style="margin:0px 30px"  width="145" height="150"></a>
+</div>
+<br><br><br><br><br>
+
+<div class="card-footer text-muted">
+<p style="text-align:center" class="p-3 mb-2 bg-dark text-white">©Commander in chief Subodh Varshney</p>
+</div>
+{% block body %}{% endblock %}
+
+</body>
+
+</html>
